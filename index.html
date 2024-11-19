@@ -3,22 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Converter</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Venn Diagrams and Problem-Solving with Sets</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <div class="converter-container">
-        <h1>Temperature Converter</h1>
-        <div class="input-group">
-            <input type="number" id="temperatureInput" placeholder="Enter temperature" />
-            <select id="conversionType">
-                <option value="CtoF">Celsius to Fahrenheit</option>
-                <option value="FtoC">Fahrenheit to Celsius</option>
-            </select>
-        </div>
-        <button id="convertButton">Convert</button>
-        <p id="result"></p>
-    </div>
-    <script src="script.js"></script>
+
+    <!-- Video Lecture Section -->
+    <section id="lecture">
+        <h1>Video Lecture: Venn Diagrams and Problem-Solving with Sets</h1>
+        <iframe width="400" height="315" src="https://www.youtube.com/embed/CRnh3Vb5BdY?si=Wn4SOvyQqq8iEBgH" 
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2>Quiz: Venn Diagrams and Problem-Solving</h2>
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. In a Venn diagram, what does the intersection of two sets represent?</p>
+                <input type="radio" name="q1" value="A"> A. Union<br>
+                <input type="radio" name="q1" value="B"> B. Intersection<br>
+                <input type="radio" name="q1" value="C"> C. Difference<br>
+                <span class="feedback" id="feedback1"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. If A ∩ B is empty, what does that indicate about sets A and B?</p>
+                <input type="radio" name="q2" value="A"> A. They are equal<br>
+                <input type="radio" name="q2" value="B"> B. They have no elements in common<br>
+                <input type="radio" name="q2" value="C"> C. A is a subset of B<br>
+                <span class="feedback" id="feedback2"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. Which of the following is a correct set notation for the union of three sets A, B, and C?</p>
+                <input type="radio" name="q3" value="A"> A. A ∩ B ∩ C<br>
+                <input type="radio" name="q3" value="B"> B. A ∪ B ∪ C<br>
+                <input type="radio" name="q3" value="C"> C. A - (B ∪ C)<br>
+                <span class="feedback" id="feedback3"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. In a Venn diagram with three sets, how many regions are there in total?</p>
+                <input type="radio" name="q4" value="A"> A. 6<br>
+                <input type="radio" name="q4" value="B"> B. 4<br>
+                <input type="radio" name="q4" value="C"> C. 8<br>
+                <span class="feedback" id="feedback4"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. If A = {1, 2, 3}, B = {2, 3, 4}, and C = {3, 4, 5}, what is A ∪ B ∪ C?</p>
+                <input type="radio" name="q5" value="A"> A. {3, 4}<br>
+                <input type="radio" name="q5" value="B"> B. {1, 2, 3, 4, 5}<br>
+                <input type="radio" name="q5" value="C"> C. {2, 3, 4}<br>
+                <span class="feedback" id="feedback5"></span>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </section>
+
+    <!-- Assignment Section -->
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p><strong>Assignment Question:</strong></p>
+        <p>Create a Venn diagram that includes three overlapping sets. Write at least 5 questions based on the diagram and provide solutions using set theory principles.</p>
+        <p>Please submit your assignment by sending an email to: <a href="mailto:setproblem101@gmail.com">setproblem101@gmail.com</a></p>
+        <p>If the link does not work, send your assignment manually to: setproblem101@gmail.com</p>
+        <textarea id="assignmentInput" rows="6" placeholder="Write your assignment here..."></textarea>
+        <button id="submitAssignment" onclick="submitAssignment()">Submit Assignment</button>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <h2>PLEASE DONATE</h2>
+        <p>Account Number: 2032202001590</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/GTBank_logo.svg/768px-GTBank_logo.svg.png" alt="GTBank Logo" width="150">
+        <p>Wave Mobile: 3709558</p>
+        <img src="https://s.rfi.fr/media/display/ed44f02a-c239-11ec-b0fc-005056bf8594/w:1280/p:16x9/wave-senegal-mobile-money.png" alt="Wave Mobile Logo" width="150">
+    </section>
+
+    <script src="script.js"></script> <!-- Link to external JS file -->
 </body>
 </html>
