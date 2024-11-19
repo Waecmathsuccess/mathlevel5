@@ -1,32 +1,53 @@
-// Select elements
-const temperatureInput = document.getElementById("temperatureInput");
-const conversionType = document.getElementById("conversionType");
-const convertButton = document.getElementById("convertButton");
-const result = document.getElementById("result");
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// Function to convert temperature
-function convertTemperature() {
-    const temperature = parseFloat(temperatureInput.value);
-    const type = conversionType.value;
+    let score = 0;
+    const totalQuestions = 5;
 
-    if (isNaN(temperature)) {
-        result.textContent = "Please enter a valid number!";
-        result.style.color = "red";
-        return;
+    // Clear all previous feedback
+    document.querySelectorAll('.feedback').forEach(feedback => {
+        feedback.textContent = '';
+    });
+
+    // Correct answers for each question
+    const correctAnswers = {
+        q1: 'B',
+        q2: 'B',
+        q3: 'B',
+        q4: 'C',
+        q5: 'B'
+    };
+
+    // Check each question
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionName = 'q' + i;
+        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+        const feedbackElement = document.getElementById(`feedback${i}`);
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswers[questionName]) {
+                feedbackElement.textContent = '✔ Correct!';
+                feedbackElement.style.color = 'green';
+                score++;
+            } else {
+                feedbackElement.textContent = '✖ Incorrect!';
+                feedbackElement.style.color = 'red';
+            }
+        } else {
+            feedbackElement.textContent = '✖ No answer selected!';
+            feedbackElement.style.color = 'red';
+        }
     }
 
-    let convertedTemp;
+    alert(`Your score is ${score} out of ${totalQuestions}`);
+});
 
-    if (type === "CtoF") {
-        convertedTemp = (temperature * 9/5) + 32;
-        result.textContent = `${temperature}°C is ${convertedTemp.toFixed(2)}°F`;
-    } else if (type === "FtoC") {
-        convertedTemp = (temperature - 32) * 5/9;
-        result.textContent = `${temperature}°F is ${convertedTemp.toFixed(2)}°C`;
+function submitAssignment() {
+    const assignmentText = document.getElementById('assignmentInput').value;
+    if (assignmentText.trim() === "") {
+        alert("Please write something before submitting!");
+    } else {
+        alert("Your assignment has been submitted. Please send it to the email provided.");
+        document.getElementById('assignmentInput').value = ''; // Clear the textarea
     }
-
-    result.style.color = "green";
 }
-
-// Add event listener
-convertButton.addEventListener("click", convertTemperature);
